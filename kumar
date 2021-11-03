@@ -1,0 +1,22 @@
+n = int(input())
+m = n +1
+char = 1
+ans = [0]*m
+answer="" 
+dash = (n-1)*2
+character = 96+n
+for i in range(1,n+1,1):
+    s = dash*'-'
+    seq = chr(character)
+    for j in range(char-1): 
+        seq=chr(character+j+1)+'-'+seq+'-'+chr(character+j+1)
+        s+=seq 
+        s+=dash*'-' 
+        ans[i] = s 
+        answer+=s+"\n" 
+        dash-=2 
+        char+=1 
+        character-=1 
+        for i in range(n-1,0,-1): 
+            answer+=ans[i]+"\n" 
+            print (answer)
